@@ -1,0 +1,15 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false #不将自己注册进行服务中心
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+ribbon:   #超时问题
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+logging:
+  level:
+    com.serookie.springcloud.service.PaymentService: debug
+

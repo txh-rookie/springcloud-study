@@ -1,0 +1,25 @@
+server:
+  port: 3366
+spring:
+  application:
+    name: cloud-client #注册进eureka服务器的微服务名
+  cloud:
+    config:
+      label: main
+      name: config
+      profile: dev
+      uri: http://localhost:3344
+  rabbitmq:
+    host: 1.15.58.197
+    username: kevintam
+    password: 123456
+    port: 5672
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,30 @@
+server:
+  port: 3344
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/txh-rookie/springcloudconfig.git
+          search-paths:
+            - springcloudconfig
+          username: txh-rookie
+          password: txh843808107
+      label: master
+  rabbitmq:
+    host: 1.15.58.197
+    username: kevintam
+    password: 123456
+    port: 5672
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'

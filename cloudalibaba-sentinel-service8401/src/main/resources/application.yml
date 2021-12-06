@@ -1,0 +1,20 @@
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: serookie.com:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719 #默认端口，加入被占用可以进行更换。
+      #配置sentinel dashboard地址
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
